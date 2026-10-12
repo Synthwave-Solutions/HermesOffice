@@ -1,0 +1,32 @@
+name: SynthPulse Office Pi ARM64
+on:
+  push:
+    branches: [synthpulse/pi]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build our ARM64 Office image from source
+        run: docker build --platform linux/arm64 -f packaging/pi/Dockerfile -t synthpulse-office-pi:$GITHUB_SHA .
+      - name: Verify and export
+        run: |
+          test "$(docker image inspect synthpulse-office-pi:$GITHUB_SHA --format '{{.Architecture}}')" = arm64
+          docker run --rm --entrypoint /bin/sh synthpulse-office-pi:$GITHUB_SHA -c 'test -f /opt/office/apps/docs/out/main/index.js; test -f /opt/office/apps/sheets/out/main/index.js; test -f /opt/office/apps/slides/out/main/index.js; test -f /opt/office/apps/pdf/out/main/index.js; test -f /opt/office/apps/markdown/out/main/index.js'
+          mkdir -p pi-release
+          docker save synthpulse-office-pi:$GITHUB_SHA | gzip > pi-release/synthpulse-office-arm64.tar.gz
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          p=pathlib.Path('pi-release');f=p/'synthpulse-office-arm64.tar.gz'
+          d={'repository':os.environ['GITHUB_REPOSITORY'],'commit':os.environ['GITHUB_SHA'],'run':os.environ['GITHUB_RUN_ID'],'architecture':'arm64','hardware_tested':False,'image':'synthpulse-office-pi:'+os.environ['GITHUB_SHA'],'sha256':{f.name:hashlib.sha256(f.read_bytes()).hexdigest()}}
+          (p/'provenance.json').write_text(json.dumps(d,indent=2)+'\n')
+          (p/'SHA256SUMS').write_text(d['sha256'][f.name]+'  '+f.name+'\n')
+          PY
+      - name: Publish own GitHub prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "synthpulse-pi-${GITHUB_RUN_NUMBER}" pi-release/* --target "$GITHUB_SHA" --prerelease --title "SynthPulse Office - Raspberry Pi ARM64" --notes "Our branded Office sources, built for ARM64. Choose Docs, Sheets, Slides, PDF and Markdown separately in Pi Setup. Runtime and physical Pi testing remain pending; see provenance.json."

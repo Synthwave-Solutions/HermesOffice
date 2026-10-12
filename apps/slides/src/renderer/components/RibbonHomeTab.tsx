@@ -186,7 +186,7 @@ export function RibbonHomeTab({ rb }: { rb: RibbonTabCtx }) {
   }
   return (
     <>
-      <Group label="Hermes AI">
+      <Group label="SynthPulse AI">
         <button
           className={`rb-big ai-entry${aiOpen ? ' active' : ''}`}
           data-tip={t('aiOpenAssistant')}
@@ -195,7 +195,7 @@ export function RibbonHomeTab({ rb }: { rb: RibbonTabCtx }) {
           <span className="rb-big-icon">
             <HermesMark size={26} />
           </span>
-          <span>Hermes AI</span>
+          <span>SynthPulse AI</span>
         </button>
         <button
           className="rb-big ai-entry"

@@ -14,7 +14,7 @@ import { initialState } from './updater'
  *
  * The Hermes Desktop checks how far the local checkout is behind origin/main
  * and applies by running `hermes update` (git pull) + rebuild + bundle swap.
- * HermesOffice does the same without a shipped feed: the app compares the
+ * SynthPulse Office does the same without a shipped feed: the app compares the
  * commit it was built from (build-info.json, baked at build time) against the
  * head of origin/main via `git ls-remote` (git protocol — no API token, no
  * rate limit), and applies by handing off to tools/hermesoffice-update.mjs,
@@ -162,7 +162,7 @@ function spawnHelper(
     const child = spawn(process.execPath, [helperScript(), ...args], {
       env: {
         ...process.env,
-        // packaged Electron: execPath is the HermesOffice binary — this flag
+        // packaged Electron: execPath is the SynthPulse Office binary — this flag
         // makes it run the helper as a plain Node process (no GUI, no lock)
         ELECTRON_RUN_AS_NODE: '1',
         HERMESOFFICE_SOURCE_DIR: sourceDir(),
@@ -273,7 +273,7 @@ async function checkForUpdate(getWindow: () => BrowserWindow | null): Promise<vo
     app.dock?.bounce('informational')
     if (Notification.isSupported()) {
       new Notification({
-        title: 'HermesOffice update available',
+        title: 'SynthPulse Office update available',
         body: `${builtVer} → ${newVersion}`,
       }).show()
     }

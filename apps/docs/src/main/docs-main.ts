@@ -213,7 +213,7 @@ const tMain = createI18n({
     menuWindow: '窗口',
     menuHelp: '帮助',
     menuShortcuts: '键盘快捷键',
-    menuDocsHelp: 'HermesOffice Docs 帮助',
+    menuDocsHelp: 'SynthPulse Office Docs 帮助',
   },
   en: {
     dlgOpenDoc: 'Open Document',
@@ -308,7 +308,7 @@ const tMain = createI18n({
     menuWindow: 'Window',
     menuHelp: 'Help',
     menuShortcuts: 'Keyboard Shortcuts',
-    menuDocsHelp: 'HermesOffice Docs Help',
+    menuDocsHelp: 'SynthPulse Office Docs Help',
   },
   ja: {
     dlgOpenDoc: '文書を開く',
@@ -403,7 +403,7 @@ const tMain = createI18n({
     menuWindow: 'ウィンドウ',
     menuHelp: 'ヘルプ',
     menuShortcuts: 'キーボードショートカット',
-    menuDocsHelp: 'HermesOffice Docs ヘルプ',
+    menuDocsHelp: 'SynthPulse Office Docs ヘルプ',
   },
   ko: {
     dlgOpenDoc: '문서 열기',
@@ -499,7 +499,7 @@ const tMain = createI18n({
     menuWindow: '창',
     menuHelp: '도움말',
     menuShortcuts: '키보드 바로 가기',
-    menuDocsHelp: 'HermesOffice Docs 도움말',
+    menuDocsHelp: 'SynthPulse Office Docs 도움말',
   },
   fr: {
     dlgOpenDoc: 'Ouvrir un document',
@@ -596,7 +596,7 @@ const tMain = createI18n({
     menuWindow: 'Fenêtre',
     menuHelp: 'Aide',
     menuShortcuts: 'Raccourcis clavier',
-    menuDocsHelp: 'Aide HermesOffice Docs',
+    menuDocsHelp: 'Aide SynthPulse Office Docs',
   },
   de: {
     dlgOpenDoc: 'Dokument öffnen',
@@ -693,7 +693,7 @@ const tMain = createI18n({
     menuWindow: 'Fenster',
     menuHelp: 'Hilfe',
     menuShortcuts: 'Tastenkombinationen',
-    menuDocsHelp: 'HermesOffice Docs-Hilfe',
+    menuDocsHelp: 'SynthPulse Office Docs-Hilfe',
   },
   es: {
     dlgOpenDoc: 'Abrir documento',
@@ -790,7 +790,7 @@ const tMain = createI18n({
     menuWindow: 'Ventana',
     menuHelp: 'Ayuda',
     menuShortcuts: 'Atajos de teclado',
-    menuDocsHelp: 'Ayuda de HermesOffice Docs',
+    menuDocsHelp: 'Ayuda de SynthPulse Office Docs',
   },
   th: {
     dlgOpenDoc: 'เปิดเอกสาร',
@@ -885,7 +885,7 @@ const tMain = createI18n({
     menuWindow: 'หน้าต่าง',
     menuHelp: 'วิธีใช้',
     menuShortcuts: 'แป้นพิมพ์ลัด',
-    menuDocsHelp: 'วิธีใช้ HermesOffice Docs',
+    menuDocsHelp: 'วิธีใช้ SynthPulse Office Docs',
   },
   id: {
     dlgOpenDoc: 'Buka Dokumen',
@@ -980,7 +980,7 @@ const tMain = createI18n({
     menuWindow: 'Jendela',
     menuHelp: 'Bantuan',
     menuShortcuts: 'Pintasan Papan Ketik',
-    menuDocsHelp: 'Bantuan HermesOffice Docs',
+    menuDocsHelp: 'Bantuan SynthPulse Office Docs',
   },
   ru: {
     dlgOpenDoc: 'Открыть документ',
@@ -1076,7 +1076,7 @@ const tMain = createI18n({
     menuWindow: 'Окно',
     menuHelp: 'Справка',
     menuShortcuts: 'Сочетания клавиш',
-    menuDocsHelp: 'Справка HermesOffice Docs',
+    menuDocsHelp: 'Справка SynthPulse Office Docs',
   },
   ar: {
     dlgOpenDoc: 'فتح مستند',
@@ -1172,7 +1172,7 @@ const tMain = createI18n({
     menuWindow: 'نافذة',
     menuHelp: 'تعليمات',
     menuShortcuts: 'اختصارات لوحة المفاتيح',
-    menuDocsHelp: 'تعليمات HermesOffice Docs',
+    menuDocsHelp: 'تعليمات SynthPulse Office Docs',
   },
   pt: {
     dlgOpenDoc: 'Abrir Documento',
@@ -1268,7 +1268,7 @@ const tMain = createI18n({
     menuWindow: 'Janela',
     menuHelp: 'Ajuda',
     menuShortcuts: 'Atalhos de Teclado',
-    menuDocsHelp: 'Ajuda do HermesOffice Docs',
+    menuDocsHelp: 'Ajuda do SynthPulse Office Docs',
   },
   it: {
     dlgOpenDoc: 'Apri documento',
@@ -1364,7 +1364,7 @@ const tMain = createI18n({
     menuWindow: 'Finestra',
     menuHelp: 'Aiuto',
     menuShortcuts: 'Scelte rapide da tastiera',
-    menuDocsHelp: 'Guida di HermesOffice Docs',
+    menuDocsHelp: 'Guida di SynthPulse Office Docs',
   },
   pl: {
     dlgOpenDoc: 'Otwórz dokument',
@@ -1460,7 +1460,7 @@ const tMain = createI18n({
     menuWindow: 'Okno',
     menuHelp: 'Pomoc',
     menuShortcuts: 'Skróty klawiaturowe',
-    menuDocsHelp: 'Pomoc HermesOffice Docs',
+    menuDocsHelp: 'Pomoc SynthPulse Office Docs',
   },
   nl: {
     dlgOpenDoc: 'Document openen',
@@ -1556,7 +1556,7 @@ const tMain = createI18n({
     menuWindow: 'Venster',
     menuHelp: 'Help',
     menuShortcuts: 'Sneltoetsen',
-    menuDocsHelp: 'HermesOffice Docs Help',
+    menuDocsHelp: 'SynthPulse Office Docs Help',
   },
   ms: {
     dlgOpenDoc: 'Buka Dokumen',
@@ -1652,7 +1652,7 @@ const tMain = createI18n({
     menuWindow: 'Tetingkap',
     menuHelp: 'Bantuan',
     menuShortcuts: 'Pintasan Papan Kekunci',
-    menuDocsHelp: 'Bantuan HermesOffice Docs',
+    menuDocsHelp: 'Bantuan SynthPulse Office Docs',
   },
   he: {
     dlgOpenDoc: 'פתיחת מסמך',
@@ -1746,7 +1746,7 @@ const tMain = createI18n({
     menuWindow: 'חלון',
     menuHelp: 'עזרה',
     menuShortcuts: 'קיצורי מקלדת',
-    menuDocsHelp: 'עזרה של HermesOffice Docs',
+    menuDocsHelp: 'עזרה של SynthPulse Office Docs',
   },
   hi: {
     dlgOpenDoc: 'दस्तावेज़ खोलें',
@@ -1842,7 +1842,7 @@ const tMain = createI18n({
     menuWindow: 'विंडो',
     menuHelp: 'सहायता',
     menuShortcuts: 'कीबोर्ड शॉर्टकट',
-    menuDocsHelp: 'HermesOffice Docs सहायता',
+    menuDocsHelp: 'SynthPulse Office Docs सहायता',
   },
   'zh-TW': {
     dlgOpenDoc: '開啟文件',
@@ -1935,7 +1935,7 @@ const tMain = createI18n({
     menuWindow: '視窗',
     menuHelp: '說明',
     menuShortcuts: '鍵盤快速鍵',
-    menuDocsHelp: 'HermesOffice Docs 說明',
+    menuDocsHelp: 'SynthPulse Office Docs 說明',
   },
 })
 const tm = (key: Parameters<typeof tMain>[1], params?: Parameters<typeof tMain>[2]) =>
@@ -2619,7 +2619,7 @@ export function registerAiIpc(): void {
     }
     const settings = resolveAiSettings(stored, defaultAiSettings())
     // a stored BYOK provider is honored when usable; half-filled configs fall back to genspark
-    settings.provider = 'hermes'
+    // Preserve the explicitly configured OpenAI-compatible OmniRoute provider.
     return settings
   })
 
@@ -3608,7 +3608,7 @@ interface DocsShellHooks {
   focusTab(id: string): void
   /** closes the calling tab instead of the whole shell window (Cmd+W / role:'close') */
   closeActiveTab(): void
-  /** Shell router used to open exported PDFs in a new HermesOffice tab. */
+  /** Shell router used to open exported PDFs in a new SynthPulse Office tab. */
   openGeneratedPath?(path: string): boolean
 }
 let shellHooks: DocsShellHooks | null = null
@@ -3964,7 +3964,7 @@ export function createDocsWindow(openPath?: string): BrowserWindow {
     height: 900,
     minWidth: 980,
     minHeight: 600,
-    title: 'HermesOffice Docs',
+    title: 'SynthPulse Office Docs',
     // Word-like custom title bar (document name centered, quick-access buttons)
     ...(process.platform === 'darwin'
       ? { titleBarStyle: 'hiddenInset' as const }
@@ -4255,7 +4255,7 @@ export function startDocsStandalone(): void {
   installContextMenu(app, () => contextMenuLabels(getUiLang()))
   // dev runs must not share the packaged app's userData (recent files, AI settings)
   // or its single-instance lock — otherwise `npm run dev` silently quits whenever
-  // the installed HermesOffice Docs is open and forwards its argv there instead.
+  // the installed SynthPulse Office Docs is open and forwards its argv there instead.
   // AI_OFFICE_USER_DATA: E2E/screenshot runs isolate userData (and the
   // single-instance lock) so parallel automation sessions don't evict each other
   if (process.env.AI_OFFICE_USER_DATA) app.setPath('userData', process.env.AI_OFFICE_USER_DATA)

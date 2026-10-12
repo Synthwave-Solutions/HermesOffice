@@ -49,7 +49,7 @@ interface TabRecord {
 }
 
 /** must match the tab strip's rendered height (apps/shell/src/renderer/src/TabBar.tsx) */
-const TAB_STRIP_HEIGHT = 40
+const TAB_STRIP_HEIGHT = 32
 const HOME_ID = 'home'
 
 /**
@@ -60,7 +60,7 @@ const HOME_ID = 'home'
  */
 export class TabManager {
   private readonly tabs: TabRecord[] = [
-    { id: HOME_ID, kind: 'home', view: null, title: 'HermesOffice' },
+    { id: HOME_ID, kind: 'home', view: null, title: 'SynthPulse Office' },
   ]
   private activeId: string = HOME_ID
   private nextId = 1
@@ -167,7 +167,7 @@ export class TabManager {
       id,
       kind: 'docs',
       view,
-      title: openPath ? basename(openPath) : this.untitled('docs', 'HermesOffice Docs'),
+      title: openPath ? basename(openPath) : this.untitled('docs', 'SynthPulse Office Docs'),
       filePath: openPath,
     })
     this.activateTab(id)

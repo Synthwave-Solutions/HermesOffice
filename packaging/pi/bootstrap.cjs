@@ -1,0 +1,11 @@
+const {app}=require('electron');
+const path=require('node:path');
+const editor=process.env.OFFICE_EDITOR;
+if(!['docs','sheets','slides','pdf','markdown'].includes(editor))throw Error('Invalid editor');
+app.setPath('userData','/data');
+app.setPath('documents','/documents');
+app.setName('SynthPulse Office '+editor);
+app.setAppPath('/opt/office/apps/shell');
+process.env.HERMESOFFICE_START_EDITOR=editor;
+app.on('browser-window-created',(_e,win)=>win.once('ready-to-show',()=>win.maximize()));
+require('/opt/office/apps/shell/out/main/index.js');

@@ -1,4 +1,4 @@
-/** Main-process i18n strings for HermesOffice Slides (dialogs, native menus, export, autosave prompts). */
+/** Main-process i18n strings for SynthPulse Office Slides (dialogs, native menus, export, autosave prompts). */
 import { createI18n, getUiLang } from '@hermesoffice/i18n'
 
 export const tMain = createI18n({

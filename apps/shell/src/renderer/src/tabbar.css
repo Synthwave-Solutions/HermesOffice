@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 32px;
   display: flex;
   align-items: stretch;
   background: var(--tabstrip-bg);
@@ -57,9 +57,9 @@ html.hermesoffice-popover-open .tab-bar {
    * bottom padding centers content in the upper 28px band, on the same
    * line as the hover capsule — measured from Chrome, whose favicons sit
    * 3px above the tab's geometric center */
-  margin-top: 6px;
+  margin-top: 3px;
   /* 12px left = 3px plate inset + 9px icon-to-plate, per Chrome @2x */
-  padding: 0 8px 6px 12px;
+  padding: 0 8px 3px 12px;
   /* Chrome tabs shrink under pressure but never grow past 240px */
   flex: 0 1 240px;
   min-width: 104px;
@@ -278,7 +278,7 @@ html.hermesoffice-popover-open .tab-bar {
 }
 
 .app-frame-content {
-  padding-top: 40px;
+  padding-top: 32px;
 }
 
 /* ── Dark mode tab bar overrides ─────────────────────────── */
@@ -345,3 +345,5 @@ html.hermesoffice-popover-open .tab-bar {
     transition-duration: 0.01ms !important;
   }
 }
+
+.synthpulse-office-wordmark { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
