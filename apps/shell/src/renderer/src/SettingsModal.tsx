@@ -424,6 +424,8 @@ function AiStatusPill({ status }: { status: AiStatus | null }) {
 }
 
 export interface SettingsModalProps {
+  managedWorkspace?: boolean
+  managedEmail?: string
   status: AccountStatus | null
   loggingOut: boolean
   /** browser sign-in in progress (spinner shows on the account entry) */
@@ -440,6 +442,8 @@ export interface SettingsModalProps {
 }
 
 export function SettingsModal({
+  managedWorkspace = false,
+  managedEmail = '',
   status,
   loggingOut,
   loginWaiting,
@@ -546,7 +550,17 @@ export function SettingsModal({
             ))}
           </nav>
           <div className="set-pane">
-            {section === 'account' && (
+            {section === 'account' && managedWorkspace && (
+              <>
+                <h3 className="set-pane-title">{t('setSecAccount')}</h3>
+                <Field label={t('setEmail')} value={managedEmail || 'SynthPulse'} />
+                <Field label="Login" value="Google SSO · SynthPulse" />
+                <p>{lang === 'nl'
+                  ? 'Je gebruikt je eigen SynthPulse-werkruimte. Je hoeft hier niet opnieuw in te loggen. Wissel van account of log uit in SynthPulse.'
+                  : 'You are using your own SynthPulse workspace. No additional sign-in is needed here. Switch accounts or sign out in SynthPulse.'}</p>
+              </>
+            )}
+            {section === 'account' && !managedWorkspace && (
               <>
                 <h3 className="set-pane-title">{t('setSecAccount')}</h3>
                 <Field label={t('setEmail')} value={loggedIn ? email : t('setNotLoggedIn')} />

@@ -2737,7 +2737,7 @@ function RibbonInner({
           </div>
         ) : tab === 'home' ? (
           <>
-            {/* ---- Hermes AI (first slot: entry + one-click AI actions) ---- */}
+            {/* ---- SynthPulse AI (first slot: entry + one-click AI actions) ---- */}
             <div className="ribbon-group">
               <div className="ribbon-group-items">
                 <button
@@ -2748,7 +2748,7 @@ function RibbonInner({
                   <span className="rb-big-icon">
                     <HermesMark size={26} />
                   </span>
-                  <span>Hermes AI</span>
+                  <span>SynthPulse AI</span>
                 </button>
                 <button
                   className="rb-big ai-entry"
@@ -2848,7 +2848,7 @@ function RibbonInner({
                   <span>{t('aiTidyBtn')}</span>
                 </button>
               </div>
-              <div className="ribbon-group-label">Hermes AI</div>
+              <div className="ribbon-group-label">SynthPulse AI</div>
             </div>
 
             <div className="ribbon-sep" />

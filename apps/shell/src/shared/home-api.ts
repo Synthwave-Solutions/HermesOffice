@@ -131,7 +131,7 @@ export interface HomeApi {
   pickDefaultSaveDir(): Promise<string | null>
   /** theme switched anywhere (broadcast from the main process) */
   onThemeChanged(handler: (theme: UiTheme) => void): () => void
-  /** open the HermesOffice GitHub repository in the default browser */
+  /** open the SynthPulse Office GitHub repository in the default browser */
   openGitHub(): Promise<void>
   /** open the Genspark credit-usage page in the default browser */
   openCreditUsage(): Promise<void>

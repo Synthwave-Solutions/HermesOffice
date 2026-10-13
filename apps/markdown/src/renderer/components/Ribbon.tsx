@@ -298,7 +298,7 @@ export function Ribbon({
               <span className="rb-big-icon">
                 <HermesMark size={26} />
               </span>
-              <span>Hermes AI</span>
+              <span>SynthPulse AI</span>
             </button>
             {aiPresets.map(({ kind, btn, prompt }) => (
               <button

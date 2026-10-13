@@ -3514,7 +3514,7 @@ export function App() {
                               onClick={toggleAi}
                             >
                               <HermesMark size={14} />
-                              <span>Hermes AI</span>
+                              <span>SynthPulse AI</span>
                             </button>
                             {/* Same one-click presets as the Home tab; hidden instead of
                         disabled while the deck has no real content */}

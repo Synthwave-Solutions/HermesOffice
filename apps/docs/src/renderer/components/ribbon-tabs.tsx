@@ -1353,7 +1353,7 @@ export function ViewTab({
                     }}
                   >
                     {w.focused ? '✓ ' : ''}
-                    {w.title || 'HermesOffice Docs'}
+                    {w.title || 'SynthPulse Office Docs'}
                   </button>
                 ))}
               </div>

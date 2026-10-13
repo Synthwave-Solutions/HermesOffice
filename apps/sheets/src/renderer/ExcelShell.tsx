@@ -2485,7 +2485,7 @@ function Ribbon({
             <HermesMark size={26} />
           </span>
           <span>
-            <strong>Hermes AI</strong>
+            <strong>SynthPulse AI</strong>
           </span>
         </button>
         <button

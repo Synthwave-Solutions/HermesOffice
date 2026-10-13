@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { ReactElement } from 'react'
-import logoLockup from './assets/hermesoffice-logo.svg'
 import iconDocx from './assets/file-docx.svg'
 import iconXlsx from './assets/file-xlsx.svg'
 import iconPptx from './assets/file-pptx.svg'
@@ -453,7 +452,47 @@ const LOGIN_POLL_MS = 2500
 /** fallback deadline when the CLI does not report expires_in (device codes live ~300s) */
 const LOGIN_MAX_WAIT_MS = 300_000
 
-function AccountEntry({
+// The VPS gateway authenticates Google SSO and selects an isolated container.
+// This file supplies display metadata only, never credentials or access rights.
+function ManagedAccountEntry() {
+  const { lang, t } = useI18n()
+  const [email, setEmail] = useState('')
+  const [settingsOpen, setSettingsOpen] = useState(false)
+  const [failed, setFailed] = useState(false)
+  useEffect(() => {
+    let alive = true
+    const load = () => fetch(new URL('./workspace-identity.json', window.location.href))
+      .then(response => { if (!response.ok) throw new Error('workspace identity unavailable'); return response.json() })
+      .then(identity => {
+        if (identity.authentication !== 'google_sso' || typeof identity.email !== 'string' || !identity.email.includes('@')) throw new Error('invalid workspace identity')
+        if (alive) { setEmail(identity.email); setFailed(false) }
+      }).catch(() => { if (alive) setFailed(true) })
+    void load()
+    window.addEventListener('focus', load)
+    return () => { alive = false; window.removeEventListener('focus', load) }
+  }, [])
+  const hint = lang === 'nl' ? 'Google SSO via SynthPulse' : 'Google SSO via SynthPulse'
+  return <div className="account-entry" data-managed-workspace="true">
+    {settingsOpen && <SettingsModal managedWorkspace managedEmail={email} status={null}
+      loggingOut={false} loginWaiting={false} loginUrl={null} urlCopied={false}
+      onOpenLoginUrl={() => {}} onCopyLoginUrl={() => {}} onLogin={() => {}} onLogout={() => {}}
+      onClose={() => setSettingsOpen(false)} />}
+    <button className="account-btn" onClick={() => setSettingsOpen(true)}
+      aria-haspopup="dialog" aria-expanded={settingsOpen} aria-label={t('settings')} data-tip={email || hint}>
+      <span className={`account-avatar${email ? ' logged-in' : ''}`}>{email ? email[0].toUpperCase() : 'S'}</span>
+      <span className="account-text"><span className="account-name">{email || 'SynthPulse'}</span>
+        <span className="account-sub">{failed ? (lang === 'nl' ? 'Accountgegevens niet beschikbaar' : 'Account details unavailable') : hint}</span>
+      </span>
+    </button>
+  </div>
+}
+
+function AccountEntry(props: { onStatusChange?: (status: AccountStatus | null) => void }) {
+  return document.querySelector('meta[name="synthpulse-managed-workspace"]')
+    ? <ManagedAccountEntry /> : <LegacyAccountEntry {...props} />
+}
+
+function LegacyAccountEntry({
   onStatusChange,
 }: {
   onStatusChange?: (status: AccountStatus | null) => void
@@ -2098,7 +2137,7 @@ export function Home() {
     <div className="home">
       <aside className="sidebar">
         <div className="sidebar-logo">
-          <img className="logo-lockup" src={logoLockup} alt="HermesOffice" />
+          <span className="synthpulse-office-wordmark">SynthPulse Office</span>
         </div>
 
         <nav className="sidebar-nav">

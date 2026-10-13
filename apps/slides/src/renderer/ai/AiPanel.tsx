@@ -1978,7 +1978,7 @@ export function AiPanel({
         onPointerDown={startResize}
         role="separator"
         aria-orientation="vertical"
-        aria-label="Hermes AI"
+        aria-label="SynthPulse AI"
       />
       <div className="ai-panel-header">
         <span className="ai-panel-title">

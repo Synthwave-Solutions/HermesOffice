@@ -5715,7 +5715,7 @@ export default function App() {
         <div className="ribbon-body">
           {ribbonTab === 'home' && (
             <>
-              {/* ---- Hermes AI (first slot: entry + one-click AI actions, docs parity) ---- */}
+              {/* ---- SynthPulse AI (first slot: entry + one-click AI actions, docs parity) ---- */}
               <div className="ribbon-group">
                 <div className="ribbon-group-items">
                   <button
@@ -5726,7 +5726,7 @@ export default function App() {
                     <span className="rb-big-icon">
                       <HermesMark size={26} />
                     </span>
-                    <span>Hermes AI</span>
+                    <span>SynthPulse AI</span>
                   </button>
                   <button
                     className="rb-big ai-entry"

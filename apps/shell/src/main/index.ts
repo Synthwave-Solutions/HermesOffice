@@ -198,7 +198,7 @@ import { applyUpdateChannel, initAutoUpdater } from './updater'
 import { isUpdateChannel, type UpdateChannel } from '../shared/update-api'
 
 /**
- * HermesOffice unified shell: ONE Electron app, ONE BrowserWindow, hosting the
+ * SynthPulse Office unified shell: ONE Electron app, ONE BrowserWindow, hosting the
  * docs and sheets modules as WebContentsView tabs behind a WPS-style tab
  * strip. The shell owns the lifecycle — single-instance lock, file-
  * association routing by extension, and per-active-tab menu switching.
@@ -208,7 +208,7 @@ import { isUpdateChannel, type UpdateChannel } from '../shared/update-api'
 
 // ANY unpacked run (`npm run shell`, `npm run dev`, `npx electron .`) must not
 // share the installed app's userData or single-instance lock — otherwise a dev
-// run silently quits and forwards its argv to the running installed HermesOffice.
+// run silently quits and forwards its argv to the running installed SynthPulse Office.
 // HERMESOFFICE_USER_DATA: test drivers point this at a scratch dir so an
 // automated instance can run alongside the dev instance (separate lock).
 if (!app.isPackaged)
@@ -217,7 +217,7 @@ if (!app.isPackaged)
     process.env.HERMESOFFICE_USER_DATA ?? join(app.getPath('appData'), 'HermesOffice Dev'),
   )
 
-// The product rename from "AI Office" to HermesOffice changed the userData path; migrate old user data once
+// The product rename from "AI Office" to SynthPulse Office changed the userData path; migrate old user data once
 if (app.isPackaged) {
   const oldDir = join(app.getPath('appData'), 'AI Office')
   const newDir = app.getPath('userData')
@@ -398,7 +398,7 @@ function initAnalytics(): void {
 }
 
 // ---- first-run onboarding ----
-// O link de comunidade abre o repo do HermesOffice.
+// O link de comunidade abre o repo do SynthPulse Office.
 // Stable short link served by the hermesoffice.ai site; it 302s to the tokened
 // invite link, which stays out of this repo and rotates server-side.
 const HERMESOFFICE_REPO_URL = 'https://github.com/criptogus/HermesOffice'
@@ -548,7 +548,7 @@ const tMain = createI18n({
     errSaveDirUnusable: '所选文件夹不可写，无法用作默认保存位置',
     gwStartTitle: 'Hermes 网关离线',
     gwStartBody:
-      'HermesOffice 的 AI 依赖本地 Hermes 网关，而它没有在 127.0.0.1:8642 响应。现在启动吗？',
+      'SynthPulse Office 的 AI 依赖本地 Hermes 网关，而它没有在 127.0.0.1:8642 响应。现在启动吗？',
     gwStartNow: '启动网关',
     gwStartNotNow: '暂不',
     gwStartNever: '不再询问',
@@ -654,7 +654,7 @@ const tMain = createI18n({
       'The selected folder is not writable and cannot be used as the default save location',
     gwStartTitle: 'Hermes Gateway Offline',
     gwStartBody:
-      'HermesOffice AI runs on the local Hermes gateway, which is not answering on 127.0.0.1:8642. Start it now?',
+      'SynthPulse Office AI runs on the local Hermes gateway, which is not answering on 127.0.0.1:8642. Start it now?',
     gwStartNow: 'Start Gateway',
     gwStartNotNow: 'Not Now',
     gwStartNever: "Don't Ask Again",
@@ -761,7 +761,7 @@ const tMain = createI18n({
       '選択したフォルダーは書き込みできないため、既定の保存先として使用できません',
     gwStartTitle: 'Hermes ゲートウェイがオフラインです',
     gwStartBody:
-      'HermesOffice の AI はローカルの Hermes ゲートウェイで動作しますが、127.0.0.1:8642 に応答していません。今すぐ起動しますか？',
+      'SynthPulse Office の AI はローカルの Hermes ゲートウェイで動作しますが、127.0.0.1:8642 に応答していません。今すぐ起動しますか？',
     gwStartNow: 'ゲートウェイを起動',
     gwStartNotNow: '後で',
     gwStartNever: '今後表示しない',
@@ -867,7 +867,7 @@ const tMain = createI18n({
     errSaveDirUnusable: '선택한 폴더에 쓸 수 없어 기본 저장 위치로 사용할 수 없습니다',
     gwStartTitle: 'Hermes 게이트웨이 오프라인',
     gwStartBody:
-      'HermesOffice의 AI는 로컬 Hermes 게이트웨이에서 실행되며, 127.0.0.1:8642에서 응답하지 않습니다. 지금 시작할까요?',
+      'SynthPulse Office의 AI는 로컬 Hermes 게이트웨이에서 실행되며, 127.0.0.1:8642에서 응답하지 않습니다. 지금 시작할까요?',
     gwStartNow: '게이트웨이 시작',
     gwStartNotNow: '나중에',
     gwStartNever: '다시 묻지 않기',
@@ -975,7 +975,7 @@ const tMain = createI18n({
       "Le dossier sélectionné n'est pas accessible en écriture et ne peut pas servir d'emplacement d'enregistrement par défaut",
     gwStartTitle: 'Passerelle Hermes hors ligne',
     gwStartBody:
-      "L'IA de HermesOffice fonctionne sur la passerelle Hermes locale, qui ne répond pas sur 127.0.0.1:8642. La démarrer maintenant ?",
+      "L'IA de SynthPulse Office fonctionne sur la passerelle Hermes locale, qui ne répond pas sur 127.0.0.1:8642. La démarrer maintenant ?",
     gwStartNow: 'Démarrer la passerelle',
     gwStartNotNow: 'Plus tard',
     gwStartNever: 'Ne plus demander',
@@ -1083,7 +1083,7 @@ const tMain = createI18n({
       'Der ausgewählte Ordner ist nicht beschreibbar und kann nicht als Standard-Speicherort verwendet werden',
     gwStartTitle: 'Hermes-Gateway offline',
     gwStartBody:
-      'Die KI von HermesOffice läuft über das lokale Hermes-Gateway, das unter 127.0.0.1:8642 nicht antwortet. Jetzt starten?',
+      'Die KI von SynthPulse Office läuft über das lokale Hermes-Gateway, das unter 127.0.0.1:8642 nicht antwortet. Jetzt starten?',
     gwStartNow: 'Gateway starten',
     gwStartNotNow: 'Jetzt nicht',
     gwStartNever: 'Nicht mehr fragen',
@@ -1191,7 +1191,7 @@ const tMain = createI18n({
       'La carpeta seleccionada no admite escritura y no puede usarse como ubicación de guardado predeterminada',
     gwStartTitle: 'Gateway de Hermes sin conexión',
     gwStartBody:
-      'La IA de HermesOffice funciona con el gateway local de Hermes, que no responde en 127.0.0.1:8642. ¿Iniciarlo ahora?',
+      'La IA de SynthPulse Office funciona con el gateway local de Hermes, que no responde en 127.0.0.1:8642. ¿Iniciarlo ahora?',
     gwStartNow: 'Iniciar gateway',
     gwStartNotNow: 'Ahora no',
     gwStartNever: 'No volver a preguntar',
@@ -1294,7 +1294,7 @@ const tMain = createI18n({
     errSaveDirUnusable: 'โฟลเดอร์ที่เลือกไม่สามารถเขียนได้ จึงใช้เป็นตำแหน่งบันทึกเริ่มต้นไม่ได้',
     gwStartTitle: 'Hermes Gateway ออฟไลน์',
     gwStartBody:
-      'AI ของ HermesOffice ทำงานผ่าน Hermes Gateway ในเครื่อง ซึ่งไม่ตอบสนองที่ 127.0.0.1:8642 ต้องการเริ่มตอนนี้หรือไม่',
+      'AI ของ SynthPulse Office ทำงานผ่าน Hermes Gateway ในเครื่อง ซึ่งไม่ตอบสนองที่ 127.0.0.1:8642 ต้องการเริ่มตอนนี้หรือไม่',
     gwStartNow: 'เริ่ม Gateway',
     gwStartNotNow: 'ไว้ก่อน',
     gwStartNever: 'ไม่ต้องถามอีก',
@@ -1401,7 +1401,7 @@ const tMain = createI18n({
       'Folder yang dipilih tidak dapat ditulis dan tidak bisa digunakan sebagai lokasi penyimpanan default',
     gwStartTitle: 'Gateway Hermes Offline',
     gwStartBody:
-      'AI HermesOffice berjalan di gateway Hermes lokal, yang tidak merespons di 127.0.0.1:8642. Mulai sekarang?',
+      'AI SynthPulse Office berjalan di gateway Hermes lokal, yang tidak merespons di 127.0.0.1:8642. Mulai sekarang?',
     gwStartNow: 'Mulai Gateway',
     gwStartNotNow: 'Nanti saja',
     gwStartNever: 'Jangan tanya lagi',
@@ -1508,7 +1508,7 @@ const tMain = createI18n({
       'Выбранная папка недоступна для записи и не может использоваться как папка сохранения по умолчанию',
     gwStartTitle: 'Шлюз Hermes недоступен',
     gwStartBody:
-      'ИИ HermesOffice работает через локальный шлюз Hermes, который не отвечает на 127.0.0.1:8642. Запустить его сейчас?',
+      'ИИ SynthPulse Office работает через локальный шлюз Hermes, который не отвечает на 127.0.0.1:8642. Запустить его сейчас?',
     gwStartNow: 'Запустить шлюз',
     gwStartNotNow: 'Не сейчас',
     gwStartNever: 'Больше не спрашивать',
@@ -1610,7 +1610,7 @@ const tMain = createI18n({
     errSaveDirUnusable: 'المجلد المحدد غير قابل للكتابة ولا يمكن استخدامه كموقع حفظ افتراضي',
     gwStartTitle: 'بوابة Hermes غير متصلة',
     gwStartBody:
-      'يعمل ذكاء HermesOffice عبر بوابة Hermes المحلية، وهي لا تستجيب على 127.0.0.1:8642. هل تريد تشغيلها الآن؟',
+      'يعمل ذكاء SynthPulse Office عبر بوابة Hermes المحلية، وهي لا تستجيب على 127.0.0.1:8642. هل تريد تشغيلها الآن؟',
     gwStartNow: 'تشغيل البوابة',
     gwStartNotNow: 'ليس الآن',
     gwStartNever: 'عدم السؤال مجددًا',
@@ -1717,7 +1717,7 @@ const tMain = createI18n({
       'A pasta selecionada não permite gravação e não pode ser usada como local de salvamento padrão',
     gwStartTitle: 'Gateway do Hermes offline',
     gwStartBody:
-      'A IA do HermesOffice roda no gateway local do Hermes, que não responde em 127.0.0.1:8642. Quer iniciá-lo agora?',
+      'A IA do SynthPulse Office roda no gateway local do Hermes, que não responde em 127.0.0.1:8642. Quer iniciá-lo agora?',
     gwStartNow: 'Iniciar gateway',
     gwStartNotNow: 'Agora não',
     gwStartNever: 'Não perguntar mais',
@@ -1825,7 +1825,7 @@ const tMain = createI18n({
       'La cartella selezionata non è scrivibile e non può essere usata come posizione di salvataggio predefinita',
     gwStartTitle: 'Gateway Hermes offline',
     gwStartBody:
-      "L'IA di HermesOffice funziona sul gateway Hermes locale, che non risponde su 127.0.0.1:8642. Avviarlo ora?",
+      "L'IA di SynthPulse Office funziona sul gateway Hermes locale, che non risponde su 127.0.0.1:8642. Avviarlo ora?",
     gwStartNow: 'Avvia gateway',
     gwStartNotNow: 'Non ora',
     gwStartNever: 'Non chiedere più',
@@ -1933,7 +1933,7 @@ const tMain = createI18n({
       'Wybrany folder nie pozwala na zapis i nie może być domyślną lokalizacją zapisu',
     gwStartTitle: 'Brama Hermes offline',
     gwStartBody:
-      'Sztuczna inteligencja HermesOffice działa przez lokalną bramę Hermes, która nie odpowiada pod 127.0.0.1:8642. Uruchomić ją teraz?',
+      'Sztuczna inteligencja SynthPulse Office działa przez lokalną bramę Hermes, która nie odpowiada pod 127.0.0.1:8642. Uruchomić ją teraz?',
     gwStartNow: 'Uruchom bramę',
     gwStartNotNow: 'Nie teraz',
     gwStartNever: 'Nie pytaj ponownie',
@@ -2041,7 +2041,7 @@ const tMain = createI18n({
       'De geselecteerde map is niet beschrijfbaar en kan niet als standaard opslaglocatie worden gebruikt',
     gwStartTitle: 'Hermes-gateway offline',
     gwStartBody:
-      'De AI van HermesOffice draait op de lokale Hermes-gateway, die niet reageert op 127.0.0.1:8642. Nu starten?',
+      'De AI van SynthPulse Office draait op de lokale Hermes-gateway, die niet reageert op 127.0.0.1:8642. Nu starten?',
     gwStartNow: 'Gateway starten',
     gwStartNotNow: 'Niet nu',
     gwStartNever: 'Niet meer vragen',
@@ -2148,7 +2148,7 @@ const tMain = createI18n({
       'Folder yang dipilih tidak boleh ditulis dan tidak dapat digunakan sebagai lokasi simpanan lalai',
     gwStartTitle: 'Gateway Hermes Luar Talian',
     gwStartBody:
-      'AI HermesOffice berjalan pada gateway Hermes tempatan, yang tidak bertindak balas pada 127.0.0.1:8642. Mulakannya sekarang?',
+      'AI SynthPulse Office berjalan pada gateway Hermes tempatan, yang tidak bertindak balas pada 127.0.0.1:8642. Mulakannya sekarang?',
     gwStartNow: 'Mulakan Gateway',
     gwStartNotNow: 'Bukan sekarang',
     gwStartNever: 'Jangan tanya lagi',
@@ -2250,7 +2250,7 @@ const tMain = createI18n({
       'התיקייה שנבחרה אינה ניתנת לכתיבה ולא ניתן להשתמש בה כמיקום שמירה כברירת מחדל',
     gwStartTitle: 'שער Hermes לא מחובר',
     gwStartBody:
-      'הבינה המלאכותית של HermesOffice פועלת דרך שער Hermes המקומי, שאינו מגיב בכתובת 127.0.0.1:8642. להפעיל אותו עכשיו?',
+      'הבינה המלאכותית של SynthPulse Office פועלת דרך שער Hermes המקומי, שאינו מגיב בכתובת 127.0.0.1:8642. להפעיל אותו עכשיו?',
     gwStartNow: 'הפעל את השער',
     gwStartNotNow: 'לא עכשיו',
     gwStartNever: 'אל תשאל שוב',
@@ -2357,7 +2357,7 @@ const tMain = createI18n({
       'चयनित फ़ोल्डर में लिखा नहीं जा सकता, इसलिए इसे डिफ़ॉल्ट सहेजने के स्थान के रूप में उपयोग नहीं किया जा सकता',
     gwStartTitle: 'Hermes गेटवे ऑफ़लाइन',
     gwStartBody:
-      'HermesOffice का AI स्थानीय Hermes गेटवे पर चलता है, जो 127.0.0.1:8642 पर जवाब नहीं दे रहा। इसे अभी शुरू करें?',
+      'SynthPulse Office का AI स्थानीय Hermes गेटवे पर चलता है, जो 127.0.0.1:8642 पर जवाब नहीं दे रहा। इसे अभी शुरू करें?',
     gwStartNow: 'गेटवे शुरू करें',
     gwStartNotNow: 'अभी नहीं',
     gwStartNever: 'दोबारा न पूछें',
@@ -2454,7 +2454,7 @@ const tMain = createI18n({
     errSaveDirUnusable: '所選資料夾無法寫入，無法作為預設儲存位置',
     gwStartTitle: 'Hermes 閘道離線',
     gwStartBody:
-      'HermesOffice 的 AI 依賴本機 Hermes 閘道，而它沒有在 127.0.0.1:8642 回應。現在啟動嗎？',
+      'SynthPulse Office 的 AI 依賴本機 Hermes 閘道，而它沒有在 127.0.0.1:8642 回應。現在啟動嗎？',
     gwStartNow: '啟動閘道',
     gwStartNotNow: '暫不',
     gwStartNever: '不再詢問',
@@ -2544,7 +2544,8 @@ function createShellWindow(): void {
     height: 900,
     minWidth: 980,
     minHeight: 600,
-    title: 'HermesOffice',
+    title: 'SynthPulse Office',
+    ...(process.env.HERMESOFFICE_VPS === '1' ? { frame: false, autoHideMenuBar: true } : {}),
     // vibrancy: editor modules punch translucent regions (e.g. the slides
     // thumbnail pane) through to the desktop
     ...(process.platform === 'darwin'
@@ -2999,7 +3000,7 @@ function statEntries(paths: string[]): RecentEntry[] {
 }
 
 function registerHomeIpc(): void {
-  // signed-in means HermesOffice's own device-code login; the shared gsk CLI key
+  // signed-in means SynthPulse Office's own device-code login; the shared gsk CLI key
   // is only a silent fallback, deliberately not shown here to nudge users onto our key
   ipcMain.handle(HOME_CHANNELS.accountStatus, async () => {
     try {
@@ -4424,7 +4425,17 @@ app.whenReady().then(async () => {
   installDockMenu()
   initAutoUpdater(() => shellWindow, currentUpdateChannel())
 
-  if (!pendingLaunchPath || !openDocumentPath(pendingLaunchPath)) tabManager?.openHomeTab()
+  if (!pendingLaunchPath || !openDocumentPath(pendingLaunchPath)) {
+    // Each authenticated VPS entry opens its own editor directly.
+    switch (process.env.HERMESOFFICE_START_EDITOR) {
+      case 'docs': newDocTab(); break
+      case 'sheets': await newSheetTab(); break
+      case 'slides': newSlideTab(); break
+      case 'pdf': await newPdfTab(); break
+      case 'markdown': newMarkdownTab(); break
+      default: tabManager?.openHomeTab()
+    }
+  }
   pendingLaunchPath = null
 
   // The gateway may be offline when the shell starts, and then every AI panel
